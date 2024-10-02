@@ -1,0 +1,24 @@
+@startuml ER-Diagramm_Zimmerreservierung
+entity Gast {
+  + Name: String
+  + E-Mail: String
+  + Adresse: String
+}
+
+entity Zimmer {
+  + Nr: long
+  + Name: String
+  + Personenanzahl: int
+  + Preis: float
+  + Balkon: boolean
+}
+
+entity Reservierung {
+  + Zimmer: Zimmer
+  + Datum von-bis: Date
+  + Hauptgast: Gast
+}
+
+Gast -- Reservierung
+Reservierung -- Zimmer
+@enduml

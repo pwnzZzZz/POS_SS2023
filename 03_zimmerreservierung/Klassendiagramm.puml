@@ -1,0 +1,24 @@
+@startuml Klassendiagramm_Zimmerreservierung
+class Gast {
+  - Name: String
+  - E-Mail: String
+  - Adresse: String
+}
+
+class Zimmer {
+  - Nr: long
+  - Name: String
+  - Personenanzahl: int
+  - Preis: float
+  - Balkon: boolean
+}
+
+class Reservierung {
+    - Zimmer: Zimmer 
+  - Datum: Date
+  - Hauptgast: Gast
+}
+
+Gast "1" -- "*" Reservierung
+Reservierung "1" -- "1" Zimmer
+@enduml
